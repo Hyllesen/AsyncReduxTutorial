@@ -25,6 +25,7 @@ export default class App extends Component {
   componentDidMount() {
     this.fetchRandomPeopleAPI();
   }
+
   render() {
     let content = <PeopleList items={this.state.items} />;
     if (this.state.isFetching) {
