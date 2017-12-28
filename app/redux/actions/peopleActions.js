@@ -22,7 +22,7 @@ export const fetchPeople = () => {
     try {
       let response = await fetch("https://randomuser.me/api/?results=15");
       let json = await response.json();
-      dispatch(fetchingPeopleSuccess(json));
+      dispatch(fetchingPeopleSuccess(json.results));
     } catch (error) {
       dispatch(fetchingPeopleFailure(error));
     }
