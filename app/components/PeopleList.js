@@ -6,7 +6,7 @@ export default class PeopleList extends Component {
   _keyExtractor = item => item.email;
 
   _renderItem = ({ item }) => {
-    const { name, picture, cell, email, phone } = item;
+    const { name, picture, cell, email } = item;
 
     return (
       <View>
