@@ -31,7 +31,7 @@ export default class PeopleList extends Component {
     return (
       <FlatList
         style={{ flex: 1 }}
-        data={this.props.items}
+        data={this.props.people}
         keyExtractor={this._keyExtractor}
         renderItem={this._renderItem}
         showsVerticalScrollIndicator={false}
@@ -42,7 +42,7 @@ export default class PeopleList extends Component {
 }
 
 PeopleList.propTypes = {
-  items: PropTypes.array
+  people: PropTypes.array
 };
 
 const styles = StyleSheet.create({
