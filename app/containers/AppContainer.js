@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { StyleSheet, View, ActivityIndicator } from "react-native";
 import PeopleList from "../components/PeopleList";
 
-export default class App extends Component {
+export default class AppContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +16,7 @@ export default class App extends Component {
     try {
       let response = await fetch("https://randomuser.me/api/?results=15");
       let json = await response.json();
-      this.setState({ items: json.results, isFetching: false });
+      this.setState({ people: json.results, isFetching: false });
     } catch (error) {
       this.setState({ errorMessage: error });
     }
