@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { StyleSheet, View, ActivityIndicator } from "react-native";
 import PeopleList from "../components/PeopleList";
+import { fetchPeople } from "../redux/actions/peopleActions";
+import { connect } from "react-redux";
 
-export default class AppContainer extends Component {
+class AppContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -43,3 +45,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#093339"
   }
 });
+
+const mapStateToProps = state => {
+  return {
+    randomPeople: state
+  };
+};
+
+export default connect(mapStateToProps, { fetchPeople })(AppContainer);
